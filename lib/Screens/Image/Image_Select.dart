@@ -175,7 +175,7 @@ class _ImageSelectState extends State<ImageSelect> {
                     onPressed: () {
                       if (pickedImagee != null) {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) => ReviewPage(
+                            builder: (BuildContext context) => Image_Predict(
                                   image: pickedImagee,
                                   title: widget.title,
                                 )));

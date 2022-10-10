@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:rp_project/Buttons/Main_Page_Button.dart';
 import 'package:rp_project/Constants/Colors.dart';
@@ -11,6 +13,8 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -32,8 +36,7 @@ class _MainPageState extends State<MainPage> {
               color: kPrimaryWhiteColor,
             ),
             onPressed: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (BuildContext context) => LandingScreen()));
+              SignOut();
             },
           )
         ],
@@ -90,5 +93,11 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
     );
+  }
+
+  Future<void> SignOut() async {
+    await firebaseAuth.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (BuildContext context) => LandingScreen()));
   }
 }
