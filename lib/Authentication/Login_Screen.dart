@@ -27,17 +27,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _confirmpasswordController =
       TextEditingController();
 
-  // final FirebaseAuth _auth = FirebaseAuth.instance;
-  // final GoogleSignIn _googleSignIn = GoogleSignIn();
-
   String? password;
   String? bodyError;
   String? confirm;
-
-  // late String hid;
-  // late String chapterid;
-  // late String image;
-  // bool isLoading = false;
 
   bool _isLoading = false;
   bool showPassword = true;
@@ -45,34 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
   bool showPasswordSignup2 = true;
   bool showconfirmPassword = true;
 
-  // void showMessage(String message) {
-  //   showDialog(
-  //       context: context,
-  //       builder: (BuildContext context) {
-  //         return AlertDialog(
-  //           title: Text("Error"),
-  //           content: Text(message),
-  //           actions: [
-  //             TextButton(
-  //               child: Text("Ok"),
-  //               onPressed: () {
-  //                 Navigator.of(context).pop();
-  //               },
-  //             )
-  //           ],
-  //         );
-  //       });
-  // }
-
-  // Future<void> signOutFromGoogle() async {
-  //   await _googleSignIn.signOut();
-  //   await _auth.signOut();
-  // }
-
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
-    // User? result = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
         key: _scaffoldKey,
@@ -102,7 +69,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               BorderRadius.all(Radius.circular(20.0))),
                     ),
                   ),
-                  //  SizedBox(height: screenHeight * (1 / 20)),
                   DefaultTabController(
                     length: 2,
                     initialIndex: 0,
@@ -125,12 +91,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         Container(
                           height: screenHeight * 0.765,
-                          // decoration: BoxDecoration(
-                          //     border: Border(
-                          //         top: BorderSide(
-                          //             color: Colors.purple, width: 0.5)
-                          //     )
-                          // ),
                           child: TabBarView(
                             children: <Widget>[
                               SingleChildScrollView(
@@ -170,48 +130,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                     _password(),
                                     SizedBox(
                                         height: screenHeight * (0.25 / 10)),
-                                    // !_isLoading
-                                    //     ? bodyError != null
-                                    //         ? Padding(
-                                    //             padding:
-                                    //                 const EdgeInsets.fromLTRB(
-                                    //                     25, 0, 25, 0),
-                                    //             child: Container(
-                                    //               padding:
-                                    //                   EdgeInsets.only(top: 10),
-                                    //               alignment: Alignment.topLeft,
-                                    //               child: Text(
-                                    //                 bodyError.toString(),
-                                    //                 textAlign: TextAlign.left,
-                                    //                 style: TextStyle(
-                                    //                     color: Colors.red),
-                                    //               ),
-                                    //             ))
-                                    //         : SizedBox()
-                                    //     : SizedBox(),
-                                    //  SizedBox(height: screenHeight * (0.25 / 20)),
-                                    // Align(
-                                    //     alignment: Alignment.centerRight,
-                                    //     child: Padding(
-                                    //       padding:
-                                    //           const EdgeInsets.only(right: 20),
-                                    //       child: TextButton(
-                                    //           onPressed: () {
-                                    //             // Navigator.of(context)
-                                    //             //     .pushReplacement(
-                                    //             //   MaterialPageRoute(
-                                    //             //       builder:
-                                    //             //           (BuildContext context) =>
-                                    //             //               ForgetPassword()),
-                                    //             // );
-                                    //           },
-                                    //           child: Text(
-                                    //             "Forgot  Password ?",
-                                    //             style: TextStyle(
-                                    //                 fontSize: 12,
-                                    //                 color: kPrimaryGreyColor),
-                                    //           )),
-                                    //     )),
 
                                     LoginPageButton(
                                       function: () async {

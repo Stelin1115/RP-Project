@@ -1,0 +1,4 @@
+0 black_headed_caterpillar
+1 healthy_leaf
+2 leaf_rot
+3 rhinoroceros_beetle
